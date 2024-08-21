@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<head>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/Asset/Eon puth.png">
+  <script src="script.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    function change_bg(){
+      const screenWidth = window.innerWidth;
+      const bgImage = document.getElementById('bg-img');
+
+      if (screenWidth < 768) {
+        bgImage.src = 'Asset/BGP.jpg';
+      }
+      else{
+        bgImage.src = 'Asset/BG.png';
+      }}
+    
+  </script>
+  
+  <nav class="navbar navbar-expand-xl navbar-black bg-black fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="Asset/Eon puth.png" style="height: 10vh; width: 100%; "/>
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-black" style="justify-content: space-between;" >
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3" >
+                    <li><a href="#" id="nav-text" >Home </a></li>
+                    <li><a href="#about" id="nav-text" >About </a></li>
+                    <li><a href="#project" id="nav-text" >Project </a></li>
+                    <li><a href="#" id="nav-text" data-bs-toggle="modal" data-bs-target="#contact">Contact </a></li>
+                    
+                </ul>
+            </div>
+      </div>
+    </div>
+    
+  </nav>
+  <title>Hello, I'm Ekel</title>
+</head>
+<body onload="change_bg()" style="background-color: black">
+  <img src="Asset/BG.png" id="bg-img" />
+  <div
+    class="container-xl"
+    style="color: azure; font-size: 20px; padding-bottom: 25%"
+  >
+    <p style="padding-top: 40vh">Hey, I'm a Human</p>
+    <h1 style="font-size: 50px">
+      <span
+        >My name is
+        <a
+          href="https://www.linkedin.com/in/ekel/"
+          style="text-decoration: none; color: #56729f"
+          >Michael Oktavian
+          <img src="Asset/Lk.png" style="width: 30px; height: 30px" /></a
+      ></span>
+    </h1>
+    <p style="padding-top: 1%">
+      Known as <a style="color: #7395f2">Ekel/EoN</a>
+    </p>
+  </div>
+
+  <div
+    class="container-fluid bg-black text-white" id="about"
+    style="color: azure; --bs-bg-opacity: 0.75;"
+  >
+    <div class="row" style="padding-top: 2%; margin:auto; ">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <img
+          src="Asset/profile.jpg"
+          class="img-fluid rounded mx-auto d-block" alt="Responsive image" style="justify-content: center; max-height: 80%;"
+          
+        />
+      </div>
+      <div class="col-md-5">
+        <h1 class="text-center">
+          Hello I'm <span style="color: #5470bf">Ekel/EoN</span>
+        </h1>
+        <p style="text-align: justify">
+          Hello, my name is Michael Oktavian. I'm born on October 12th, 2001 in
+          Bandung, I'm an electrical engineering student at Telkom University.
+          In my free time, I enjoys playing games, learning new skills, and
+          appreciating art. I'm ambitious and have a dream to make my dream
+          become a reality.
+        </p>
+        <ul class="nav nav-tabs nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#edu"
+              >Education</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              style="--bs-link-color: white"
+              data-bs-toggle="tab"
+              href="#skill"
+              >Skill</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#exp">Experience</a>
+          </li>
+        </ul>
+        <div class="tab-content text-justified" style="padding-top: 3%;">
+            <div class="tab-pane container active" id="edu">
+                <dl>
+                    <dt>2021 - Current</dt>
+                    <dd>Electrical Engineering International Class, Telkom University (GPA 3.75)</dd>
+                    <dt>2017 - 2020</dt>
+                    <dd>Network and Computer Engineer in Vocational Highschool at SMKN 1 Cikarang Selatan</dd>
+                  </dl>  
+            </div>
+          <div class="tab-pane container fade" id="skill">
+            <dl>
+                <dt>Network</dt>
+                <dd>Routing, Firewall Configuration, Server Administrator </dd>
+                <dt>Programming</dt>
+                <dd>C/C++, Python, HTML, CSS, Javascript, Bootstrap, etc</dd>
+                <dt>Design</dt>
+                <dd>Video Editing, Digital Illustrator, 360 Fusion</dd>
+                </dl>  
+          </div>
+          <div class="tab-pane container fade text-justified" id="exp" style="max-height: 20vh; overflow-y: scroll;">
+                <dt>Internship</dt>
+                <dd>- Sumisho Global Logistics as Finance and Accounting </dd>
+                <dd>- Pasific Satelite Nusantara as Asset Management </dd>
+                <dd>- Uniguard Tri Tunggal in Hardware Division</dd>
+                <dt>Competition</dt>
+                <dd>- 3rd place in IT System and Administration competition (2019)</dd>
+                <dd>- Top 8 PLN ice Competition Village Empowerment Innovation (2023)</dd>
+                <dd>- Top 163 Innovation Innovillage competition (2023)</dd>
+                <dt>Lab Assistance</dt>
+                <dd>- Basic Computer Laboratory (2022-2024)</dd>
+                
+                
+             
+                </dl>  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+
+  <div class="container justify-content-center">
+      <div id="project" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#project" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#project" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#project" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#project" data-bs-slide-to="3"></button>
+        </div>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="Asset/QFF_WM.png" alt="Quadrature Fish Feeding and Water Monitoring" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+              <h3>QFF-WM</h3>
+              <p>Quadrature Fish Feeding and Water Monitoring</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="Asset/Illus.png" alt="Digital Illustrator" class="d-block" style="width:100%">
+            <div class="carousel-caption  text-dark bg-light" style="--bs-bg-opacity: 0.45;">
+              <h3>Digital Illustrator</h3>
+              <p>Illustate,Editing and Manipulating an Image</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="Asset/depth.png" alt="depth camera" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+              <h3>Joint Camera Depth Estimation</h3>
+              <p>Estimating every join of human body distance from camera</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="Asset/MT_Syst.png" alt="Management Tools System" class="d-block" style="width:100%">
+            <div class="carousel-caption text-dark">
+              <h3>Management-Tool System</h3>
+              <p>Managing Toolkit by a system. Web Application Created using Laravel</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#project" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#project" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+  </div>
+
+  <div class="modal" id="contact">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div
+          class="modal-header"
+          style="background-color: #56729f; color: black"
+        >
+          <h4 class="modal-title">Contact Me</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body" style="margin: auto">
+          <div class="row" id="row-modal">
+            <div class="col-auto">
+              <div class="gg-mail" id="logo-modal"></div>
+            </div>
+            <div class="col-auto">
+              <a href="mailto:ekeloct.eon@gmail.com" id="modal-text">: ekeloct.eon@gmail.com</a>
+            </div>
+          </div>
+          <div class="row" id="row-modal">
+            <div class="col-auto">
+              <div class="gg-user-list" id="logo-modal"></div>
+            </div>
+            <div class="col-auto">
+              <a href="https://www.linkedin.com/in/ekel/" id="modal-text"
+                >: linkedin.com/in/ekel/</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
