@@ -1,245 +1,544 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 <head>
-  <link href="style.css" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="/Asset/Eon puth.png">
-  <script src="script.min.js"></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>
-    function change_bg(){
-      const screenWidth = window.innerWidth;
-      const bgImage = document.getElementById('bg-img');
-
-      if (screenWidth < 768) {
-        bgImage.src = 'Asset/BGP.jpg';
-      }
-      else{
-        bgImage.src = 'Asset/BG.png';
-      }}
-    
-  </script>
-  
-  <nav class="navbar navbar-expand-xl navbar-black bg-black fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="Asset/Eon puth.png" style="height: 10vh; width: 100%; "/>
-      </a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"        aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body bg-black" style="justify-content: space-between;" >
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-3" >
-                    <li><a href="#" id="nav-text" >Home </a></li>
-                    <li><a href="#about" id="nav-text" >About </a></li>
-                    <li><a href="#project" id="nav-text" >Project </a></li>
-                    <li><a href="#" id="nav-text" data-bs-toggle="modal" data-bs-target="#contact">Contact </a></li>
-                    
-                </ul>
-            </div>
-      </div>
-    </div>
-    
-  </nav>
-  <title>Hello, I'm Ekel</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Oktavian</title>
+<meta name="description" content="Michael Oktavian (Ekel / EoN): embedded systems, AI and project management engineer. Portfolio, experience, projects and certificates.">
+<meta name="theme-color" content="#f7f2f8">
+<link rel="icon" type="image/png" href="Asset/brand/favicon.png">
+<script>
+  /* apply a saved theme before first paint */
+  try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="stylesheet" href="style.css">
 </head>
-<body onload="change_bg()" style="background-color: black">
-  <img src="Asset/BG.png" id="bg-img" />
-  <div
-    class="container-xl"
-    style="color: azure; font-size: 20px; padding-bottom: 25%"
-  >
-    <p style="padding-top: 40vh">Hey, I'm a Human</p>
-    <h1 style="font-size: 50px">
-      <span
-        >My name is
-        <a
-          href="https://www.linkedin.com/in/ekel/"
-          style="text-decoration: none; color: #56729f"
-          >Michael Oktavian
-          <img src="Asset/Lk.png" style="width: 30px; height: 30px" /></a
-      ></span>
-    </h1>
-    <p style="padding-top: 1%">
-      Known as <a style="color: #7395f2">Ekel/EoN</a>
-    </p>
-  </div>
+<body>
+<a class="skip" href="#about">Skip to content</a>
 
-  <div
-    class="container-fluid bg-black text-white" id="about"
-    style="color: azure; --bs-bg-opacity: 0.75;"
-  >
-    <div class="row" style="padding-top: 2%; margin:auto; ">
-      <div class="col-md-1"></div>
-      <div class="col-md-5">
-        <img
-          src="Asset/profile.jpg"
-          class="img-fluid rounded mx-auto d-block" alt="Responsive image" style="justify-content: center; max-height: 80%;"
-          
-        />
+<header class="nav" id="top">
+  <a class="brand" href="#home" aria-label="Michael Oktavian, home">
+    <img class="logo logo-ink" src="Asset/brand/eon-ink.png" alt="" width="46" height="33">
+    <img class="logo logo-light" src="Asset/brand/eon-light.png" alt="" width="46" height="33">
+    <span>Michael Oktavian</span>
+  </a>
+  <nav id="menu" class="menu" aria-label="Primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-tools">
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to night theme" aria-pressed="false">
+      <svg class="ico-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" fill="currentColor"/></svg>
+      <svg class="ico-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></g></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-hello">Hi, I'm Ekel</p>
+      <h1 id="hero-title">Michael Oktavian</h1>
+      <p class="hero-role">Embedded systems, AI and project management</p>
+      <p class="hero-pitch">I turn ideas into working systems, from hardware and computer vision to ERP and local AI agents. Right now I'm building a smart-manufacturing platform at PT Dharma Polimetal.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">See my projects</a>
+        <a class="btn btn-soft" href="Michael_Oktavian_CV.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
-      <div class="col-md-5">
-        <h1 class="text-center">
-          Hello I'm <span style="color: #5470bf">Ekel/EoN</span>
-        </h1>
-        <p style="text-align: justify">
-          Hello, my name is Michael Oktavian. 
-          I'm an electrical engineering student at Telkom University.
-          In my free time, I enjoys playing games, learning new skills, and
-          appreciating art. I'm ambitious and have a dream to make my dream
-          become a reality.
-        </p>
-        <ul class="nav nav-tabs nav-justified">
-          <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="tab" href="#edu"
-              >Education</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              style="--bs-link-color: white"
-              data-bs-toggle="tab"
-              href="#skill"
-              >Skill</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#exp">Experience</a>
-          </li>
+      <dl class="facts">
+        <div><dt>Now</dt><dd>Product Development Engineer at PT Dharma Polimetal</dd></div>
+        <div><dt>Studied</dt><dd>B.Eng. Electrical Engineering at Telkom University, cum laude (GPA 3.8/4)</dd></div>
+        <div><dt>Recognized</dt><dd>IEEE SPS Scholarship 2024, PLN ICE top 8, Innovillage top 163</dd></div>
+      </dl>
+    </div>
+    <figure class="arch-wrap">
+      <div class="arch">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="Asset/poster/hero-wave.webp">
+          <img src="Asset/gif/hero-wave.gif" width="480" height="480" alt="Illustrated chibi version of Michael with round glasses and a grey hoodie, waving hello under falling petals">
+        </picture>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="sheet sheet-about" id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div class="about-media">
+      <div class="sticker tilt-l">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="Asset/poster/about-read.webp">
+          <img src="Asset/gif/about-read.gif" width="400" height="400" loading="lazy" alt="Illustrated Michael reading a book at a desk with a cup of tea and a small plant">
+        </picture>
+      </div>
+
+    </div>
+    <div class="about-copy">
+      <h2 id="about-title">About me</h2>
+      <p class="lead">I like closing the gap between an idea and a system that runs in the real world. My work covers embedded hardware, computer vision, RPA and ERP, and more and more local AI agents that live inside a company's own network.</p>
+      <p>I led the end-to-end development of the Quadrature Fish Feeding and Water Monitoring system as Key Engineer and Project Manager. It reached the top 8 at PLN ICE 2023 and the top 163 at Innovillage. I have also shipped RPA and license plate recognition solutions into production.</p>
+      <p>I graduated cum laude in Electrical Engineering (International Class) from Telkom University and received the IEEE Signal Processing Society Scholarship in 2024. Outside work I play games, pick up new skills, make music in Ableton Live and edit video in DaVinci Resolve.</p>
+
+      <h3 class="mini">Areas of expertise</h3>
+      <ul class="chips">
+        <li>Network administration</li>
+        <li>Artificial intelligence</li>
+        <li>Embedded systems</li>
+        <li>Internet of Things</li>
+        <li>Data analysis</li>
+        <li>Data science</li>
+        <li>Robotic process automation</li>
+        <li>Project management</li>
+        <li>Programming</li>
+      </ul>
+
+      <h3 class="mini">Education</h3>
+      <dl class="edu">
+        <div>
+          <dt>2021 to 2025</dt>
+          <dd>
+            <strong>Telkom University</strong>, West Java
+            <span>B.Eng. in Electrical Engineering, International Class. Cum laude, GPA 3.8/4. Focused on embedded systems with an emphasis on IoT, AI and project management. Thesis: Micro-Doppler Simulator Based on Monocular Camera and Generative Adversarial Network.</span>
+          </dd>
+        </div>
+        <div>
+          <dt>2017 to 2020</dt>
+          <dd>
+            <strong>SMKN 1 Cikarang Selatan</strong>, West Java
+            <span>Computer and Network Engineering. Network infrastructure basics such as firewalls, TCP/IP and networking devices, plus computer and digital design fundamentals.</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EXPERIENCE ============================ -->
+<section class="sheet sheet-exp" id="experience" aria-labelledby="exp-title">
+  <div class="wrap exp-grid">
+    <aside class="exp-aside">
+      <h2 id="exp-title">Where I've worked</h2>
+      <p class="aside-note">Seven roles across manufacturing, security systems, telecom, logistics and teaching, newest first.</p>
+      <div class="sticker tilt-r">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="Asset/poster/work-pump.webp">
+          <img src="Asset/gif/work-pump.gif" width="400" height="400" loading="lazy" alt="Illustrated Michael with clenched fists, determined, next to floating code symbols and a progress bar">
+        </picture>
+      </div>
+    </aside>
+
+    <ol class="timeline">
+      <li class="job job-now">
+        <div class="job-head">
+          <h3>Product Development Engineer</h3>
+          <p class="job-org">PT Dharma Polimetal</p>
+          <p class="job-meta"><span class="pill">Current role</span><time>Aug 2026</time> to present, West Java</p>
+        </div>
+        <ul>
+          <li>Architecting a unified smart-manufacturing platform that connects a robotic-arm automation line, an automated inspection system and ERP in a single mesh architecture, built with an agile sandbox approach for real-time, end-to-end production monitoring.</li>
+          <li>Developing an in-house ERP that digitalizes document workflows (e-signature, checksheets, memos and more) to remove manual processes. It is integrated with on-premise local AI agents that compare engineering drawings, generate documents and draft project plans.</li>
+          <li>Building a computer-vision inspection model that classifies metallic materials and verifies the completeness of production parts, reducing reliance on manual visual checks.</li>
         </ul>
-        <div class="tab-content text-justified" style="padding-top: 3%;">
-            <div class="tab-pane container active" id="edu">
-                <dl>
-                    <dt>2021 - Current</dt>
-                    <dd>Electrical Engineering International Class, Telkom University (GPA 3.75)</dd>
-                    <dt>2017 - 2020</dt>
-                    <dd>Network and Computer Engineer in Vocational Highschool at SMKN 1 Cikarang Selatan</dd>
-                  </dl>  
-            </div>
-          <div class="tab-pane container fade" id="skill">
-            <dl>
-                <dt>Network</dt>
-                <dd>Routing, Firewall Configuration, Server Administrator </dd>
-                <dt>Programming</dt>
-                <dd>C/C++, Python, HTML, CSS, Javascript, Bootstrap, etc</dd>
-                <dt>Design</dt>
-                <dd>Video Editing, Digital Illustrator, 360 Fusion</dd>
-                </dl>  
-          </div>
-          <div class="tab-pane container fade text-justified" id="exp" style="max-height: 20vh; overflow-y: scroll;">
-                <dt>Internship</dt>
-                <dd>- Sumisho Global Logistics as Finance and Accounting </dd>
-                <dd>- Pasific Satelite Nusantara as Asset Management </dd>
-                <dd>- Uniguard Tri Tunggal in Hardware Division</dd>
-                <dd>- Huawei as Project Controller</dd>
-                <dt>Competition</dt>
-                <dd>- 3rd place in IT System and Administration competition (2019)</dd>
-                <dd>- Top 8 PLN ice Competition Village Empowerment Innovation (2023)</dd>
-                <dd>- Top 163 Innovation Innovillage competition (2023)</dd>
-                <dt>Lab Assistance</dt>
-                <dd>- Basic Computer Laboratory (2022-2024)</dd>
-                
-                
-             
-                </dl>  
-          </div>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Project Developer</h3>
+          <p class="job-org">Uniguard Indonesia</p>
+          <p class="job-meta"><time>Nov 2025</time> to <time>Jan 2026</time>, West Java</p>
         </div>
+        <ul>
+          <li>Orchestrated the full development of a production-ready Boom Gate system, overseeing user requirements validation, solution design and embedded systems engineering.</li>
+          <li>Developed and deployed an Automatic License Plate Recognition (ALPR) feature using IP cameras and single-board computers.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Assistant Project Controller Intern</h3>
+          <p class="job-org">Huawei Tech Investment</p>
+          <p class="job-meta"><time>Sep 2024</time> to <time>Mar 2025</time>, DKI Jakarta</p>
+        </div>
+        <ul>
+          <li>Built and deployed an RPA solution that streamlines document creation, collection and submission, integrating a total of 8 applications.</li>
+          <li>Managed subcontractors to keep documentation compliant with established standards.</li>
+          <li>Ran an average of 45 end-to-end Acceptance Test Procedures (ATP) every day to confirm system performance and reliability.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Hardware Engineer Intern</h3>
+          <p class="job-org">Uniguard Indonesia</p>
+          <p class="job-meta"><time>Jul 2024</time> to <time>Aug 2024</time>, West Java</p>
+        </div>
+        <ul>
+          <li>Built a warehouse asset borrowing system that combines RFID and barcodes for tracking and management.</li>
+          <li>Developed an IoT water level monitoring device that uses the MQTT protocol.</li>
+          <li>Designed and implemented a smart water dispenser that uses QR codes for purchase transactions.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Laboratory Assistant</h3>
+          <p class="job-org">Daskom Laboratory</p>
+          <p class="job-meta"><time>Jun 2022</time> to <time>Jun 2024</time>, West Java</p>
+        </div>
+        <ul>
+          <li>Supervised events, keeping execution on goal and teams across departments aligned.</li>
+          <li>Helped students build problem-solving and coding skills through structured practicum sessions.</li>
+          <li>Created and oversaw capstone projects that assess how well students apply programming concepts.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Asset Management Intern</h3>
+          <p class="job-org">Pasifik Satelit Nusantara</p>
+          <p class="job-meta"><time>Mar 2019</time> to <time>Jun 2019</time>, West Java</p>
+        </div>
+        <ul>
+          <li>Recorded and maintained inventory for incoming and outgoing goods, keeping stock accurate and discrepancies low.</li>
+          <li>Labeled and registered new items in the company database to improve traceability.</li>
+          <li>Organized and stored received goods in designated locations to make good use of warehouse space.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Finance and Accounting Intern</h3>
+          <p class="job-org">Sumisho Global Logistic</p>
+          <p class="job-meta"><time>Oct 2018</time> to <time>Jan 2019</time>, West Java</p>
+        </div>
+        <ul>
+          <li>Reconciled petty ticket trucking cash to keep financial records accurate.</li>
+          <li>Managed invoice documentation: verification, filing and tracking for timely processing.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ PROJECTS ============================ -->
+<section class="sheet sheet-proj" id="projects" aria-labelledby="proj-title">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <h2 id="proj-title">Things I've built</h2>
+        <p class="aside-note">From a fish farm on a reservoir to a factory floor. Each one started as a problem somebody was tired of doing by hand.</p>
       </div>
-      <div class="col-md-1"></div>
+      <div class="sticker sticker-sm tilt-r">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="Asset/poster/projects-think.webp">
+          <img src="Asset/gif/projects-think.gif" width="400" height="400" loading="lazy" alt="Illustrated Michael thinking with a hand on his chin until a light bulb appears in a thought bubble">
+        </picture>
+      </div>
+    </header>
+
+    <div class="proj-grid">
+      <!-- featured 1 -->
+      <article class="proj proj-feature">
+        <div class="proj-media">
+          <img src="Asset/projects/qff-wm.jpg" width="1200" height="800" loading="lazy" alt="Team installing the feeding and monitoring device on a floating net cage in a reservoir">
+        </div>
+        <div class="proj-body">
+          <h3>QFF-WM, Quadrature Fish Feeding and Water Monitoring</h3>
+          <p>An IoT system that feeds fish and watches water conditions on floating net cages. I led it end to end as Key Engineer and Project Manager with team Feeding Frenzy, entered as ADIWARING for the Cipatik-Saguling reservoir.</p>
+          <ul class="tags"><li>IoT</li><li>Embedded</li><li>Project management</li></ul>
+          <p class="proj-note">PLN ICE 2023, top 8. Innovillage 2023, top 163.</p>
+        </div>
+      </article>
+
+      <!-- featured 2 -->
+      <article class="proj proj-feature proj-diagram">
+        <div class="proj-media">
+          <svg viewBox="0 0 480 300" role="img" aria-label="Diagram: a robotic-arm line, an inspection system and an ERP with AI agents, all linked through one mesh hub">
+            <g class="d-links" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 8">
+              <path d="M115 100 L228 142"/><path d="M365 100 L252 142"/><path d="M240 176 L240 214"/>
+            </g>
+            <circle class="d-hub-ring" cx="240" cy="158" r="40"/>
+            <circle class="d-hub" cx="240" cy="158" r="28"/>
+            <text class="d-hub-t" x="240" y="163" text-anchor="middle">mesh</text>
+            <g class="d-node d-a"><rect x="30" y="48" width="170" height="58" rx="20"/><text x="115" y="82" text-anchor="middle">Robotic-arm line</text></g>
+            <g class="d-node d-b"><rect x="280" y="48" width="170" height="58" rx="20"/><text x="365" y="82" text-anchor="middle">Automated inspection</text></g>
+            <g class="d-node d-c"><rect x="120" y="216" width="240" height="58" rx="20"/><text x="240" y="250" text-anchor="middle">ERP and local AI agents</text></g>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <h3>Smart-manufacturing platform</h3>
+          <p>One architecture that links a robotic-arm automation line, an automated inspection system and an in-house ERP, so production can be watched in real time from end to end. Built at PT Dharma Polimetal with an agile sandbox approach.</p>
+          <ul class="tags"><li>ERP</li><li>Computer vision</li><li>Local AI agents</li><li>Automation</li></ul>
+          <p class="proj-note">In progress since August 2026.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-media proj-tile tile-sky">
+          <img class="tile-sticker" src="Asset/projects/LPR.png" width="229" height="380" loading="lazy" alt="">
+        </div>
+        <div class="proj-body">
+          <h3>Boom Gate with license plate recognition</h3>
+          <p>A production-ready boom gate system, from validating user requirements to embedded engineering. The ALPR feature runs on IP cameras and single-board computers.</p>
+          <ul class="tags"><li>ALPR</li><li>Embedded</li><li>IP cameras</li></ul>
+          <p class="proj-note">Uniguard Indonesia, 2025.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-media proj-tile tile-rose">
+          <img class="tile-sticker" src="Asset/projects/RPA.png" width="254" height="380" loading="lazy" alt="">
+        </div>
+        <div class="proj-body">
+          <h3>Document RPA for project control</h3>
+          <p>An RPA solution that handles document creation, collection and submission across 8 applications, so the team stops copying files by hand.</p>
+          <ul class="tags"><li>RPA</li><li>Process automation</li></ul>
+          <p class="proj-note">Huawei Tech Investment, 2024 to 2025.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-media">
+          <img src="Asset/projects/depth.jpg" width="900" height="600" loading="lazy" alt="Screenshot of a body pose detector showing the distance of a person from the camera next to a depth map">
+        </div>
+        <div class="proj-body">
+          <h3>Joint camera depth estimation</h3>
+          <p>Estimates how far each joint of the human body is from the camera, using pose landmarks together with a depth map.</p>
+          <ul class="tags"><li>Python</li><li>Computer vision</li></ul>
+          <p class="proj-note">Telkom  University, 2025.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="Asset/projects/math-solver-poster.jpg">
+            <img src="Asset/projects/math-solver.gif" width="400" height="267" loading="lazy" alt="Screen recording of a camera canvas where a hand draws a symbol in the air and the program reads it">
+          </picture>
+        </div>
+        <div class="proj-body">
+          <h3>Camera math solver</h3>
+          <p>Draw an equation in the air in front of a camera and let the program read it and solve it.</p>
+          <ul class="tags"><li>Python</li><li>Computer vision</li></ul>
+          <p class="proj-note">Telkom University, 2023.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-media">
+          <img src="Asset/projects/mt-system.jpg" width="900" height="600" loading="lazy" alt="Screenshot of the Management Tools web app showing an item list and a log of borrowed and returned items">
+        </div>
+        <div class="proj-body">
+          <h3>Management-tool system</h3>
+          <p>A web application built with Laravel for managing a toolkit: item lists, employees and a log of who borrowed and returned what.</p>
+          <ul class="tags"><li>Laravel</li><li>Web app</li></ul>
+          <p class="proj-note">Uniguard Indonesia, 2024.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-media proj-tile tile-sage">
+          <img class="tile-sticker" src="Asset/projects/micro-doppler-simulator.png" width="236" height="380" loading="lazy" alt="">
+        </div>
+        <div class="proj-body">
+          <h3>Micro-Doppler simulator</h3>
+          <p>My thesis: a simulator that produces micro-Doppler signatures from a single monocular camera, using a generative adversarial network.</p>
+          <ul class="tags"><li>GAN</li><li>Signal processing</li><li>Research</li></ul>
+          <p class="proj-note">Telkom University, 2025.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SKILLS ============================ -->
+<section class="sheet sheet-skills" id="skills" aria-labelledby="skills-title">
+  <div class="wrap skills-grid">
+    <div class="skills-intro">
+      <h2 id="skills-title">Tools and skills</h2>
+      <p class="aside-note">What I reach for most often, and how I like to work with other people.</p>
+      <img class="skills-sticker" src="Asset/stickers/thumbs.webp" width="254" height="380" loading="lazy" alt="">
+    </div>
+    <div class="skills-board">
+      <section aria-labelledby="sk-prog">
+        <h3 id="sk-prog">Programming</h3>
+        <ul class="chips"><li>C/C++</li><li>C#</li><li>JavaScript</li><li>Python</li><li>HTML</li><li>CSS</li></ul>
+      </section>
+      <section aria-labelledby="sk-net">
+        <h3 id="sk-net">Network and cloud</h3>
+        <ul class="chips"><li>Routing</li><li>Firewall configuration</li><li>Server administration</li><li>Alibaba Cloud DevOps</li></ul>
+      </section>
+      <section aria-labelledby="sk-soft">
+        <h3 id="sk-soft">Software</h3>
+        <ul class="chips"><li>VS Code</li><li>Proteus</li><li>Unity</li><li>Autodesk Fusion 360</li><li>Adobe Photoshop</li><li>Ableton Live</li><li>Canva</li><li>DaVinci Resolve</li><li>Excel (data visualization)</li></ul>
+      </section>
+      <section aria-labelledby="sk-people">
+        <h3 id="sk-people">Working with people</h3>
+        <ul class="chips"><li>Presentation</li><li>Planning</li><li>Creative problem solving</li><li>Teamwork</li><li>Active listening</li><li>Adaptability</li><li>Analytical thinking</li></ul>
+      </section>
+      <section aria-labelledby="sk-lang">
+        <h3 id="sk-lang">Languages</h3>
+        <ul class="langs">
+          <li><strong>Indonesian</strong> native</li>
+          <li><strong>Sundanese</strong> native</li>
+          <li><strong>English</strong> B2. Duolingo English Test 100/160, ECCT 3.5/4</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CERTIFICATES ============================ -->
+<section class="sheet sheet-cert" id="achievements" aria-labelledby="cert-title">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <h2 id="cert-title">Awards and certificates</h2>
+        <p class="aside-note">Competitions, scholarships, talks and courses, with the original certificates. Tap one to read it in full.</p>
+      </div>
+      <div class="sticker sticker-sm tilt-l">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="Asset/poster/awards-jump.webp">
+          <img src="Asset/gif/awards-jump.gif" width="400" height="400" loading="lazy" alt="Illustrated Michael jumping for joy with confetti falling around him">
+        </picture>
+      </div>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filter certificates">
+      <button type="button" class="chip-btn" data-filter="all" aria-pressed="true">All <span class="count">12</span></button>
+      <button type="button" class="chip-btn" data-filter="recognition" aria-pressed="false">Awards and talks <span class="count">6</span></button>
+      <button type="button" class="chip-btn" data-filter="training" aria-pressed="false">Training and work <span class="count">4</span></button>
+      <button type="button" class="chip-btn" data-filter="language" aria-pressed="false">Language <span class="count">2</span></button>
+    </div>
+
+    <ul class="cert-grid" id="cert-grid">
+      <li data-cat="recognition"><button type="button" class="cert" data-full="Asset/certs/ieee-sps-2024.jpg" data-title="IEEE Signal Processing Society Scholarship 2024">
+        <img src="Asset/certs/ieee-sps-2024-thumb.jpg" width="720" height="556" loading="lazy" alt="Certificate of Recognition from the IEEE Signal Processing Society">
+        <span class="cert-t">IEEE Signal Processing Society Scholarship 2024</span>
+        <span class="cert-m">IEEE Signal Processing Society, Dec 2024</span></button></li>
+      <li data-cat="recognition"><button type="button" class="cert" data-full="Asset/certs/pln-ice-2023.jpg" data-title="Top 8, PLN Innovation and Competition in Electricity 2023">
+        <img src="Asset/certs/pln-ice-2023-thumb.jpg" width="720" height="509" loading="lazy" alt="PLN ICE 2023 award certificate for the ADIWARING auto feeding and water monitoring proposal">
+        <span class="cert-t">Top 8, PLN Innovation and Competition in Electricity</span>
+        <span class="cert-m">PLN, Aug 2023. Team Feeding Frenzy</span></button></li>
+      <li data-cat="recognition"><button type="button" class="cert" data-full="Asset/certs/innovillage-2024.jpg" data-title="Top 163, Innovillage Social Project Program">
+        <img src="Asset/certs/innovillage-2024-thumb.jpg" width="720" height="509" loading="lazy" alt="Innovillage e-certificate for a top 163 social project">
+        <span class="cert-t">Top 163, Innovillage Social Project Program</span>
+        <span class="cert-m">Telkom University, Mar 2024</span></button></li>
+      <li data-cat="recognition"><button type="button" class="cert" data-full="Asset/certs/softt-2025.jpg" data-title="Presenter, IEEE Symposium on Future Telecommunications Technology">
+        <img src="Asset/certs/softt-2025-thumb.jpg" width="720" height="509" loading="lazy" alt="Certificate of presenter at the IEEE SOFTT symposium in Lombok">
+        <span class="cert-t">Presenter, IEEE Symposium on Future Telecommunications Technology (SOFTT)</span>
+        <span class="cert-m">Lombok, Aug 2025</span></button></li>
+      <li data-cat="recognition"><button type="button" class="cert" data-full="Asset/certs/lks-2019.jpg" data-title="Top 3, IT Network System Administrator, LKS 2019">
+        <img src="Asset/certs/lks-2019-thumb.jpg" width="720" height="556" loading="lazy" alt="Third place certificate for IT Network System Administrator at the Bekasi vocational student competition">
+        <span class="cert-t">Top 3, IT Network System Administrator</span>
+        <span class="cert-m">Student Competency Competition, Bekasi, Oct 2019</span></button></li>
+      <li data-cat="recognition"><button type="button" class="cert cert-tall" data-full="Asset/certs/mikrotik-2019.jpg" data-title="Participant, MikroTik-APJII Network Olympiad 2019">
+        <img src="Asset/certs/mikrotik-2019-thumb.jpg" width="509" height="720" loading="lazy" alt="Participant certificate for the national MikroTik and APJII network olympiad">
+        <span class="cert-t">Participant, MikroTik-APJII Network Olympiad (national)</span>
+        <span class="cert-m">Jakarta, Sep 2019</span></button></li>
+      <li data-cat="training"><button type="button" class="cert" data-full="Asset/certs/alibaba-devops.jpg" data-title="Alibaba Cloud DevOps Specialty Certification">
+        <img src="Asset/certs/alibaba-devops-thumb.jpg" width="720" height="480" loading="lazy" alt="Alibaba Cloud DevOps specialty certification">
+        <span class="cert-t">Alibaba Cloud DevOps, Specialty Certification</span>
+        <span class="cert-m">Alibaba Cloud, Jul 2025. Valid until Jul 2027</span></button></li>
+      <li data-cat="training"><button type="button" class="cert" data-full="Asset/certs/huawei-intern.jpg" data-title="Certificate of Internship Completion, Huawei Tech Investment">
+        <img src="Asset/certs/huawei-intern-thumb.jpg" width="720" height="510" loading="lazy" alt="Certificate of internship completion from Huawei">
+        <span class="cert-t">Internship completion, PMO</span>
+        <span class="cert-m">PT Huawei Tech Investment, Sep 2024 to Mar 2025</span></button></li>
+      <li data-cat="training"><button type="button" class="cert" data-full="Asset/certs/vsga-2020.jpg" data-title="Network Administrator, Vocational School Graduate Academy">
+        <img src="Asset/certs/vsga-2020-thumb.jpg" width="720" height="509" loading="lazy" alt="Training certificate for Network Administrator from the Digital Talent Scholarship">
+        <span class="cert-t">Network Administrator training, 90 hours</span>
+        <span class="cert-m">VSGA Digital Talent Scholarship, Kominfo, Oct 2020</span></button></li>
+      <li data-cat="training"><button type="button" class="cert" data-full="Asset/certs/dicoding-finlit.jpg" data-title="Introduction to Financial Literacy, Dicoding">
+        <img src="Asset/certs/dicoding-finlit-thumb.jpg" width="720" height="509" loading="lazy" alt="Dicoding certificate for Introduction to Financial Literacy">
+        <span class="cert-t">Introduction to Financial Literacy</span>
+        <span class="cert-m">Dicoding Indonesia, Jan 2026</span></button></li>
+      <li data-cat="language"><button type="button" class="cert cert-tall" data-full="Asset/certs/duolingo-2025.jpg" data-title="Duolingo English Test, 100/160 (CEFR B2)">
+        <img src="Asset/certs/duolingo-2025-thumb.jpg" width="509" height="720" loading="lazy" alt="Duolingo English Test certificate with an overall score of 100">
+        <span class="cert-t">Duolingo English Test, 100/160 (CEFR B2)</span>
+        <span class="cert-m">Duolingo, Sep 2025</span></button></li>
+      <li data-cat="language"><button type="button" class="cert cert-tall" data-full="Asset/certs/ecct-2025.jpg" data-title="English Communicative Competence Test, 3.5/4">
+        <img src="Asset/certs/ecct-2025-thumb.jpg" width="509" height="720" loading="lazy" alt="Telkom University ECCT certificate with a total score of 3.5">
+        <span class="cert-t">English Communicative Competence Test, 3.5/4</span>
+        <span class="cert-m">Telkom University Language Center, Aug 2025</span></button></li>
+    </ul>
+
+    <div class="more-certs">
+      <h3 class="mini">More on my CV</h3>
+      <ul>
+        <li><strong>Dicoding</strong> Basic Project Management, Programming With Python, Basic Data Science and Basic SQL (Jun 2026)</li>
+        <li><strong>ICSP'23</strong> International Community Service Program 2023, Universiti Teknologi MARA, GOP 6.0 (Aug 2023)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="sheet sheet-contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div class="sticker tilt-l contact-sticker">
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="Asset/poster/contact-sleep.webp">
+        <img src="Asset/gif/contact-sleep.gif" width="400" height="400" loading="lazy" alt="Illustrated Michael asleep on his desk under a crescent moon, with little z letters floating up">
+      </picture>
+    </div>
+    <div class="contact-copy">
+      <h2 id="contact-title">Say hello</h2>
+      <p class="lead">Got a project in embedded systems, AI or automation, or just want to talk shop? Email is the best way to reach me.</p>
+      <p class="mail-row">
+        <a class="mail" id="mail" href="mailto:michaeloctavian1@gmail.com">michaeloctavian1@gmail.com</a>
+        <button class="btn btn-soft btn-sm" id="copy-mail" type="button">Copy email</button>
+        <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+      </p>
+      <ul class="contact-links">
+        <li><a href="https://www.linkedin.com/in/ekel/" target="_blank" rel="noopener">LinkedIn, in/ekel</a></li>
+        <li><a href="Michael_Oktavian_CV.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a></li>
+        <li>Based in West Bandung, Indonesia</li>
+      </ul>
     </div>
   </div>
 
-  <div class="container justify-content-center">
-      <div id="project" class="carousel slide" data-bs-ride="carousel">
+  <footer class="foot">
+    <div class="wrap">
+      <ul class="moods" aria-hidden="true">
+        <li><img src="Asset/stickers/glance.webp" width="229" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/wave.webp" width="318" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/shock.webp" width="255" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/think.webp" width="240" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/worry.webp" width="266" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/jump.webp" width="231" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/bored.webp" width="310" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/read.webp" width="236" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/munch.webp" width="238" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/sleep.webp" width="479" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/fight.webp" width="251" height="380" loading="lazy" alt=""></li>
+        <li><img src="Asset/stickers/thumbs.webp" width="254" height="380" loading="lazy" alt=""></li>
+      </ul>
+      <p class="copy">&copy; <span id="year">2026</span> Michael Oktavian, also known as Ekel / EoN.</p>
+    </div>
+  </footer>
+</section>
 
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#project" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#project" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#project" data-bs-slide-to="2"></button>
-          <button type="button" data-bs-target="#project" data-bs-slide-to="3"></button>
-        </div>
-        
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="Asset/QFF_WM.png" alt="Quadrature Fish Feeding and Water Monitoring" class="d-block" style="width:100%">
-            <div class="carousel-caption">
-              <h3>QFF-WM</h3>
-              <p>Quadrature Fish Feeding and Water Monitoring</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Asset/Illus.png" alt="Digital Illustrator" class="d-block" style="width:100%">
-            <div class="carousel-caption  text-dark bg-light" style="--bs-bg-opacity: 0.45;">
-              <h3>Digital Illustrator</h3>
-              <p>Illustate,Editing and Manipulating an Image</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Asset/depth.png" alt="depth camera" class="d-block" style="width:100%">
-            <div class="carousel-caption">
-              <h3>Joint Camera Depth Estimation</h3>
-              <p>Estimating every join of human body distance from camera</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Asset/MT_Syst.png" alt="Management Tools System" class="d-block" style="width:100%">
-            <div class="carousel-caption text-dark">
-              <h3>Management-Tool System</h3>
-              <p>Managing Toolkit by a system. Web Application Created using Laravel</p>
-            </div>
-          </div>
-        </div>
-        
-        <button class="carousel-control-prev" type="button" data-bs-target="#project" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#project" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-  </div>
+</main>
 
-  <div class="modal" id="contact">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div
-          class="modal-header"
-          style="background-color: #56729f; color: black"
-        >
-          <h4 class="modal-title">Contact Me</h4>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-          ></button>
-        </div>
-
-        <div class="modal-body" style="margin: auto">
-          <div class="row" id="row-modal">
-            <div class="col-auto">
-              <div class="gg-mail" id="logo-modal"></div>
-            </div>
-            <div class="col-auto">
-              <a href="mailto:pamanekel@gmail.com" id="modal-text">: pamanekel@gmail.com</a>
-            </div>
-          </div>
-          <div class="row" id="row-modal">
-            <div class="col-auto">
-              <div class="gg-user-list" id="logo-modal"></div>
-            </div>
-            <div class="col-auto">
-              <a href="https://www.linkedin.com/in/ekel/" id="modal-text"
-                >: linkedin.com/in/ekel/</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+<dialog id="lightbox" class="lightbox" aria-label="Certificate viewer">
+  <div class="lb-bar">
+    <p id="lb-title"></p>
+    <div class="lb-actions">
+      <button type="button" class="icon-btn" id="lb-prev" aria-label="Previous certificate"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="icon-btn" id="lb-next" aria-label="Next certificate"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="icon-btn" id="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
     </div>
   </div>
+  <div class="lb-stage"><img id="lb-img" src="" alt=""></div>
+</dialog>
+
+<script src="script.js"></script>
 </body>
-
+</html>
